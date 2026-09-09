@@ -44,3 +44,7 @@ A matriz vetorial fiel e o microícone exigem produção própria. Não inserir 
 ## Aprovação posterior
 
 O pacote foi aprovado pelo proprietário: “aprovado, continue”. [ADR-0007](../../../decisions/ADR-0007-approved-v02-extractions.md) e [approved-assets.json](approved-assets.json) governam o estado atual dos cinco PNGs de assinatura. Os nomes com sufixo candidate permanecem intactos como histórico. Os testes de redução não são favicons oficiais.
+
+## Aviso de integridade posterior
+
+O PNG reverso deste diretório está truncado e permanece apenas como histórico. Usar [V02-R02](../v02-r02/README.md), que documenta a correção técnica sem alteração do desenho. Os demais quatro PNGs de assinatura foram integralmente decodificados com sucesso.

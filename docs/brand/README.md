@@ -29,3 +29,7 @@ Atualização de 2026-09-09, baseada na conversa de aprovação e no repositóri
 [V02-R01 — extração e provas de aplicação](production/v02-r01/README.md): PNGs transparentes, lettering isolado, composições candidatas e testes de redução. Este pacote não substitui a prancha definitiva nem aprova favicon ou vetor.
 
 V02-R01 foi posteriormente aprovado: [ADR-0007](../decisions/ADR-0007-approved-v02-extractions.md). Para a nova redução, consultar [favicon v01 — proposta](proposals/favicon-v01/README.md). Não usar a proposta como cânone antes de aprovação específica.
+
+## Entrega consolidada e próximo tema
+
+O PR #6 reúne as entregas anteriores diretamente contra main: [ADR-0008](../decisions/ADR-0008-consolidated-brand-delivery.md). A [proposta de tema v01](proposals/theme-v01/README.md) apresenta desktop/mobile claros e escuros; não é UI implementada. Para assinatura reversa, usar o [export corrigido V02-R02](production/v02-r02/README.md), pois o arquivo histórico reverso está truncado.

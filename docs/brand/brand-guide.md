@@ -155,3 +155,7 @@ Os PNGs transparentes extraídos e provas de composição estão em [production/
 ### Aprovação dos exports
 
 O [ADR-0007](../decisions/ADR-0007-approved-v02-extractions.md) registra a aprovação posterior de V02-R01, incluindo horizontal e reversa. Essa decisão avança os estados provisórios acima. Os microícones em [favicon-v01](proposals/favicon-v01/README.md) são propostas posteriores, sem aprovação.
+
+### Correção técnica e prova do tema
+
+O export reverso histórico apresentou falha de decodificação. O [V02-R02](production/v02-r02/README.md) fornece a correção com o mesmo alpha e a mesma geometria. A [prova do tema](proposals/theme-v01/README.md) está disponível para revisão; não aprova automaticamente layout, tipografia substituta ou favicon.
