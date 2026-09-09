@@ -205,3 +205,76 @@ button, a, input { -webkit-tap-highlight-color: transparent; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
 }
+
+/* Visual review v1: compact atlas layout; no decorative data. */
+.preview-notice { padding: 10px 24px; text-align: center; background: #302717; color: #ffda97; font-size: .875rem; }
+.intro { min-height: auto; padding-top: 48px; padding-bottom: 36px; background: none; }
+.intro h1 { font-size: clamp(2rem, 4.2vw, 3.5rem); line-height: 1.06; letter-spacing: -.045em; }
+.intro > p { font-size: 1rem; }
+.intro .search { margin-top: 24px; }
+.search input { box-shadow: none; }
+.search__results ul { list-style: none; padding: 0; margin: 0; }
+.search__results li { display: grid; grid-template-columns: 42px 1fr auto; align-items: center; gap: 12px; padding: 12px 16px; cursor: pointer; }
+.search__results li:hover, .search__results li[aria-selected='true'] { background: var(--signal-dim); }
+.signal-strip { margin-bottom: 0; }
+.section { padding-top: 40px; padding-bottom: 40px; scroll-margin-top: 140px; }
+.section-heading h2, .split-section h2, .panel h2, .game-section h2 { font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.15; }
+.section-heading { margin-bottom: 20px; }
+.table-scroll { overflow-x: auto; }
+table.ranking { width: 100%; border-collapse: collapse; min-width: 520px; }
+.ranking th, .ranking td { padding: 18px 12px; border-bottom: 1px solid var(--line); }
+.ranking th { text-align: left; font-weight: 400; }
+.ranking thead th { color: var(--fog-200); font-size: .875rem; }
+.ranking .metric { text-align: right; white-space: nowrap; }
+.ranking tbody tr:hover { background: var(--ink-900); }
+.ranking a { min-height: 44px; }
+.ranking a:hover strong { color: var(--signal); text-decoration: underline; }
+.split-section { margin-top: 20px; gap: 36px; }
+.method { margin: 24px auto; text-align: left; max-width: var(--max); }
+.method h2 { font-size: 1.75rem; }
+.method p { max-width: 760px; font-size: 1rem; }
+.pending-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.pending-grid > div { scroll-margin-top: 140px; }
+.game-page { padding-top: 32px; }
+.game-hero { grid-template-columns: 100px 1fr 250px; gap: 24px; }
+.game-identity h1 { font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.05; }
+.game-identity p { font-size: 1rem; }
+.section-nav a { min-height: 48px; font-size: .875rem; }
+.section-nav a:hover { color: var(--signal); }
+.game-section { padding: 40px 0; }
+.empty-state { min-height: 170px; text-align: left; }
+.empty-state p { max-width: 55ch; }
+.brand > span, .game-mark, .status, .signal-strip small, .metrics-grid small, .advanced dt { font-size: .75rem; }
+.game-facts div, .breadcrumbs, .insight a { font-size: .875rem; }
+.site-header nav a { display: flex; align-items: center; min-height: 44px; }
+@media (max-width: 1100px) {
+  .game-hero { grid-template-columns: 100px minmax(0, 1fr); }
+  .game-facts { grid-column: 1 / -1; }
+  .site-header__inner { grid-template-columns: auto minmax(0, 1fr); gap: 8px 24px; padding-top: 12px; }
+  .site-header nav { display: flex; grid-row: 2; grid-column: 1 / -1; overflow-x: auto; gap: 24px; }
+  .search--compact { grid-row: 1; grid-column: 2; max-width: 330px; justify-self: end; }
+  .section-nav { top: 108px; }
+  .game-section { scroll-margin-top: 180px; }
+}
+@media (max-width: 700px) {
+  .site-header { position: relative; }
+  .site-header__inner { padding: 12px 16px 0; grid-template-columns: 1fr; }
+  .brand { font-size: 1rem; }
+  .search--compact { grid-row: 2; grid-column: 1; max-width: none; }
+  .site-header nav { grid-row: 3; gap: 22px; }
+  .search--compact input { height: 44px; }
+  .intro { padding: 28px 16px; }
+  .intro h1 { font-size: 2.25rem; }
+  .intro .search { display: none; }
+  .signal-strip { grid-template-columns: 1fr 1fr; margin-bottom: 0; }
+  .signal-strip > div:nth-child(3) { grid-column: 1 / -1; border-right: 0; padding-left: 0; }
+  .pending-grid { grid-template-columns: 1fr; }
+  .section, .game-page { padding-left: 16px; padding-right: 16px; }
+  .game-hero { grid-template-columns: 64px minmax(0, 1fr); gap: 16px; }
+  .game-facts { grid-column: 1 / -1; }
+  .game-identity h1 { font-size: 2rem; overflow-wrap: anywhere; }
+  .section-nav { top: 0; gap: 22px; }
+  .game-section { scroll-margin-top: 64px; }
+  .metrics-grid strong { font-size: 1.25rem; overflow-wrap: anywhere; }
+  .panel { padding: 20px; }
+}

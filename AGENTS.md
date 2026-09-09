@@ -6,6 +6,8 @@ Do not treat external references, research notes, fixture values, or undocumente
 
 Current provider integrations are intentionally mocked. Never add SteamDB scraping or expose a Steam API key to client code.
 
+Deliver changes through feature-branch PRs. The owner merges and publishes the domain; do not push directly to main, merge or deploy without a new explicit request. See ADR-0003. Read `docs/design-system.md` for UI changes, and report automated checks separately from visual/accessibility acceptance.
+
 <!-- BEGIN:nextjs-agent-rules -->
 
 # This is NOT the Next.js you know

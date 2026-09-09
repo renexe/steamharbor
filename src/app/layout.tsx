@@ -7,6 +7,7 @@ import './globals.css';
 export const metadata: Metadata = {
   title: { default: 'SteamHarbor', template: '%s · SteamHarbor' },
   description: 'Clear, accessible insight into Steam game activity, reviews, releases, and trends.',
+  robots: { index: false, follow: false },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -23,7 +24,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <GlobalSearch games={games} compact />
           </div>
         </header>
-        <main id="content">{children}</main>
+        <div className="preview-notice">Design preview · All counts and dates are sample data, not live Steam data.</div>
+        <main id="content" tabIndex={-1}>{children}</main>
         <footer className="site-footer"><p>Independent game data, explained clearly.</p><p>SteamHarbor is not affiliated with Valve or Steam.</p></footer>
       </body>
     </html>

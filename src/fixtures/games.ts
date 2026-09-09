@@ -66,24 +66,6 @@ const fixtures: Game[] = [
       price: { state: 'unsupported', reason: 'not_applicable', checkedAt },
     },
   },
-  {
-    appId: 2246340,
-    name: 'The Long Signal',
-    type: 'game',
-    shortDescription: 'An upcoming narrative exploration game used to validate incomplete-data states.',
-    developers: ['North Channel'],
-    publishers: ['North Channel'],
-    releaseDate: 'Coming soon',
-    releaseState: 'upcoming',
-    platforms: ['Windows'],
-    tags: ['Exploration', 'Narrative'],
-    availability: {
-      catalog: { state: 'available', checkedAt },
-      activity: { state: 'unavailable', reason: 'not_applicable', checkedAt },
-      reviews: { state: 'unavailable', reason: 'not_applicable', checkedAt },
-      price: { state: 'unsupported', reason: 'source_pending', checkedAt },
-    },
-  },
 ];
 
 export const games = fixtures.map((game) => gameSchema.parse(game));

@@ -21,7 +21,8 @@ An implementation discrepancy does not silently replace documented canon. Resolv
 | Data sources, metrics, evidence and availability | [data-foundation.md](data-foundation.md) | Canonical | 2026-09-09 |
 | Frontend architecture and stack | [ADR-0001](decisions/ADR-0001-application-stack.md) | Accepted | 2026-09-09 |
 | Canon governance | [ADR-0002](decisions/ADR-0002-canonical-documentation.md) | Accepted | 2026-09-09 |
-| Design tokens and component specifications | Not yet created | Pending | — |
+| Review and delivery policy | [ADR-0003](decisions/ADR-0003-visual-review-and-delivery.md) | Accepted | 2026-09-09 |
+| Design tokens and component specifications | [design-system.md](design-system.md) | Canonical baseline; visual review pending | 2026-09-09 |
 
 ## Change rule
 
@@ -34,6 +35,6 @@ An implementation discrepancy does not silently replace documented canon. Resolv
 ## Current delivery state
 
 - M0 product and data foundations: complete.
-- M1 application foundation: first vertical slice complete.
-- Current slice: fixture-backed responsive homepage, accessible global search, game overview, normalized schemas, and failure-aware data states.
+- M1 application foundation: fixture-backed visual slice implemented; visual and accessibility acceptance pending.
+- Current slice: homepage, keyboard search, game overview, initial schemas and explicit unconnected-data states. See [visual-review-v1.md](visual-review-v1.md) for review routes and limitations (noncanonical delivery note).
 - Provider integration, authentication, pricing, price history, and global rankings: not implemented.
