@@ -147,3 +147,7 @@ Aprovação do tema não autoriza gráficos decorativos como dados, novas promes
 Próximos entregáveis técnicos: matriz editável fiel, PNGs transparentes, assinatura horizontal/vertical, versão monocromática consistente, microícone aprovado, exports para fundos definidos e inventário com dimensões, hashes e origem. Avaliar bordas claras/escuro, alpha e halos no tamanho real. Não declarar esses arquivos concluídos: só as pranchas de referência estão nesta edição.
 
 Arquivos aprovados são imutáveis. Novas revisões recebem caminho/versionamento próprios. Atualizar manifesto, registro de aprovação, índice canônico e ADR quando houver mudança material. Um agente deve ler esses registros antes de produzir qualquer nova imagem. A v01 não é fallback autorizado da v02.
+
+## Atualização de produção — V02-R01
+
+Os PNGs transparentes extraídos e provas de composição estão em [production/v02-r01](production/v02-r01/README.md). Isso avança o estado inicial de exports pendentes descrito nesta edição. Vetor, matriz monocromática consistente e favicon oficial permanecem pendentes; versões horizontal e reversa são candidatas técnicas. A referência visual aprovada não foi substituída.

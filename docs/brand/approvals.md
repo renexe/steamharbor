@@ -29,3 +29,7 @@ Fonte visual final: [steamharbor-v02-approved-board.png](approved/v02/steamharbo
 A aprovação cobre a direção e o desenho apresentado. Não afirma que as miniaturas geradas são geometricamente idênticas, que o lettering corresponde a uma fonte conhecida ou que os exports estão prontos. HEX, famílias tipográficas de apoio, mínimos e tempos definidos no guia são especificações técnicas iniciais. Revisões materiais devem ser apresentadas; arquivos oficiais não podem ser sobrescritos.
 
 O proprietário havia pedido que nenhum PR fosse aberto antes de aprovar. Essa condição foi cumprida pela aprovação definitiva; mantém-se a entrega por PR, sem merge ou publicação. A v01 é preservada, mas não é alternativa ativa.
+
+## Continuação técnica — V02-R01
+
+O proprietário autorizou: “pode prosseguir com a tarefa anterior, faça o que for preciso para continuar sem me pedir permissao”, após a explicação da extração e remoção determinística de fundo. Executado o pacote [V02-R01](production/v02-r01/README.md), preservando o binário aprovado. Essa autorização permite o trabalho técnico; o resultado não é registrado como nova aprovação visual.

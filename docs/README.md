@@ -28,6 +28,7 @@ An implementation discrepancy does not silently replace documented canon. Resolv
 | Brand index and approval records | [brand/README.md](brand/README.md) | Canonical entry point; definitive v02 approved | 2026-09-09 |
 | Definitive illustrated harbor identity | [ADR-0006](decisions/ADR-0006-definitive-harbor-brand.md) | Accepted owner approval | 2026-09-09 |
 | Brand strategy | [brand/branding.md](brand/branding.md) | Canonical documentation | 2026-09-09 |
+| Brand extraction provenance and production status | [V02-R01](brand/production/v02-r01/README.md) | Canonical production record; visual candidates labeled | 2026-09-09 |
 | Brand usage and production guide | [brand/brand-guide.md](brand/brand-guide.md) | Canonical; initial technical specs labeled | 2026-09-09 |
 
 The owner explicitly clarified that the first product version does not approve the SH monogram, palette or typography as the brand. See ADR-0005. The final v02 harbor logo with gaming containers is now explicitly approved under ADR-0006. Application redesign remains outside this documentation task.
