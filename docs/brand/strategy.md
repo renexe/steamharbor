@@ -1,5 +1,7 @@
 # Fundamentos de marca — proposta v001
 
+> Historical proposal, superseded by [official branding strategy](branding.md). Do not use as the current brand source.
+
 Estado: proposta para avaliação, não canônica. 2026-09-09.
 
 ## Posicionamento

@@ -1,5 +1,7 @@
 # SteamHarbor component foundation
 
+> Brand update: this document describes the current implementation baseline. Exact identity, target palette and brand typography now route to [ADR-0006](decisions/ADR-0006-definitive-harbor-brand.md) and the [brand guide](brand/brand-guide.md). Existing CSS is not the target brand canon; no UI migration occurred in this documentation change.
+
 Status: Canonical implementation baseline under ADR-0003. Exact visual treatment is pending owner review of the PR. Product and data foundations still govern scope and semantics.
 
 ## Visual language

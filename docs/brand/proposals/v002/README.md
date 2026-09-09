@@ -1,5 +1,7 @@
 # Exploração A/B/C — v002
 
+> Historical exploration: A/B/C were rejected. The definitive brand is [approved v02](../../approved/v02/steamharbor-v02-approved-board.png), governed by [ADR-0006](../../../decisions/ADR-0006-definitive-harbor-brand.md). This folder version is unrelated to the definitive v02.
+
 **Propostas não aprovadas. PNGs conceituais gerados com ImageGen; não são vetores finais nem arquivos de produção.** Os binários exatos estão identificados no [manifesto](manifest.json).
 
 As três pranchas mostram símbolo, composição com SteamHarbor, fundo claro e escuro, monocromia, composição compacta e redução ilustrativa. As etiquetas numéricas desenhadas nas imagens NÃO representam medições de pixels. Não usar essas pranchas como validação técnica de favicon ou tamanhos mínimos. A tipografia é desenho raster gerado; não corresponde a uma família identificada/licenciada.

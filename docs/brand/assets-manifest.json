@@ -1,0 +1,41 @@
+{
+  "date": "2026-09-09",
+  "assets": [
+    {
+      "path": "docs/brand/approved/v02/steamharbor-v02-approved-board.png",
+      "sha256": "a07c9adffc8da2b9f2e6b57181c48ee9ee8b24bdd40ae55e56013bcaf3331711",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "status": "definitive-visual-reference",
+      "source": "exec-b61ef3bc-0973-46a9-a9c8-214acde7b0f7.png",
+      "format": "PNG",
+      "production_master": false
+    },
+    {
+      "path": "docs/brand/archive/v01/steamharbor-v01-approved-board.png",
+      "sha256": "b324a2fd97c00588a5d28d8ffda3f275c4e15fe9881b7a73e615f719488f5a22",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "status": "historically-approved-superseded",
+      "source": "exec-90f5b2a8-33a1-4821-bd75-416fd13c453f.png",
+      "format": "PNG",
+      "production_master": false
+    },
+    {
+      "path": "docs/brand/references/steamharbor-harbor-theme-concept.png",
+      "sha256": "5647bbf49352918f60df2dd2856f6244dd7d47eda55b25054b13dc65b86ee37b",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "status": "approved-theme-concept-not-logo",
+      "source": "exec-5bc7f438-8302-4c1c-8863-6c15974dcad1.png",
+      "format": "PNG",
+      "production_master": false
+    }
+  ]
+}
