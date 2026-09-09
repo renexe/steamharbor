@@ -22,6 +22,7 @@ An implementation discrepancy does not silently replace documented canon. Resolv
 | Frontend architecture and stack | [ADR-0001](decisions/ADR-0001-application-stack.md) | Accepted | 2026-09-09 |
 | Canon governance | [ADR-0002](decisions/ADR-0002-canonical-documentation.md) | Accepted | 2026-09-09 |
 | Review and delivery policy | [ADR-0003](decisions/ADR-0003-visual-review-and-delivery.md) | Accepted | 2026-09-09 |
+| Vercel build and output configuration | [ADR-0004](decisions/ADR-0004-vercel-build-configuration.md) | Accepted | 2026-09-09 |
 | Design tokens and component specifications | [design-system.md](design-system.md) | Canonical baseline; visual review pending | 2026-09-09 |
 
 ## Change rule
