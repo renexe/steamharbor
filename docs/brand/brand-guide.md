@@ -151,3 +151,7 @@ Arquivos aprovados são imutáveis. Novas revisões recebem caminho/versionament
 ## Atualização de produção — V02-R01
 
 Os PNGs transparentes extraídos e provas de composição estão em [production/v02-r01](production/v02-r01/README.md). Isso avança o estado inicial de exports pendentes descrito nesta edição. Vetor, matriz monocromática consistente e favicon oficial permanecem pendentes; versões horizontal e reversa são candidatas técnicas. A referência visual aprovada não foi substituída.
+
+### Aprovação dos exports
+
+O [ADR-0007](../decisions/ADR-0007-approved-v02-extractions.md) registra a aprovação posterior de V02-R01, incluindo horizontal e reversa. Essa decisão avança os estados provisórios acima. Os microícones em [favicon-v01](proposals/favicon-v01/README.md) são propostas posteriores, sem aprovação.

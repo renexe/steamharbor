@@ -27,3 +27,5 @@ Atualização de 2026-09-09, baseada na conversa de aprovação e no repositóri
 ## Derivados técnicos
 
 [V02-R01 — extração e provas de aplicação](production/v02-r01/README.md): PNGs transparentes, lettering isolado, composições candidatas e testes de redução. Este pacote não substitui a prancha definitiva nem aprova favicon ou vetor.
+
+V02-R01 foi posteriormente aprovado: [ADR-0007](../decisions/ADR-0007-approved-v02-extractions.md). Para a nova redução, consultar [favicon v01 — proposta](proposals/favicon-v01/README.md). Não usar a proposta como cânone antes de aprovação específica.

@@ -28,6 +28,7 @@ An implementation discrepancy does not silently replace documented canon. Resolv
 | Brand index and approval records | [brand/README.md](brand/README.md) | Canonical entry point; definitive v02 approved | 2026-09-09 |
 | Definitive illustrated harbor identity | [ADR-0006](decisions/ADR-0006-definitive-harbor-brand.md) | Accepted owner approval | 2026-09-09 |
 | Brand strategy | [brand/branding.md](brand/branding.md) | Canonical documentation | 2026-09-09 |
+| Approved v02 extracted signatures | [ADR-0007](decisions/ADR-0007-approved-v02-extractions.md) | Accepted owner approval | 2026-09-09 |
 | Brand extraction provenance and production status | [V02-R01](brand/production/v02-r01/README.md) | Canonical production record; visual candidates labeled | 2026-09-09 |
 | Brand usage and production guide | [brand/brand-guide.md](brand/brand-guide.md) | Canonical; initial technical specs labeled | 2026-09-09 |
 

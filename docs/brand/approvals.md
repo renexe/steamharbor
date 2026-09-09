@@ -33,3 +33,7 @@ O proprietário havia pedido que nenhum PR fosse aberto antes de aprovar. Essa c
 ## Continuação técnica — V02-R01
 
 O proprietário autorizou: “pode prosseguir com a tarefa anterior, faça o que for preciso para continuar sem me pedir permissao”, após a explicação da extração e remoção determinística de fundo. Executado o pacote [V02-R01](production/v02-r01/README.md), preservando o binário aprovado. Essa autorização permite o trabalho técnico; o resultado não é registrado como nova aprovação visual.
+
+## Aprovação V02-R01
+
+Após a entrega dos derivados e da prancha clara/escura, o proprietário respondeu “aprovado, continue”. O [ADR-0007](../decisions/ADR-0007-approved-v02-extractions.md) registra os cinco arquivos aprovados com hashes. A [proposta de favicon v01](proposals/favicon-v01/README.md) é posterior e permanece separada, ainda não aprovada.

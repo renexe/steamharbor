@@ -1,0 +1,50 @@
+{
+  "status": "proposed-not-approved",
+  "source": "authored SVG micro-icon derived conceptually from approved v02, not a trace or full-logo vector",
+  "files": [
+    {
+      "file": "favicon-128.png",
+      "sha256": "7d1cf730f9ba60f8639f8ad9c1481f66d14a70941c2ae10167de450f2f70b243"
+    },
+    {
+      "file": "favicon-16.png",
+      "sha256": "f9c3140dca82ba05fb9f9eaae1a72bb5b53890572d13035ac0bcc3fb0a0856a5"
+    },
+    {
+      "file": "favicon-24.png",
+      "sha256": "7a96cceda50098d2313ae4d4bd54a0d92eff258bb83f349195f99a6c886c2ac7"
+    },
+    {
+      "file": "favicon-256.png",
+      "sha256": "8e69cbc5d501a03dd80c334a811920cc91c583c21c20c1090920dda2e362aef4"
+    },
+    {
+      "file": "favicon-32.png",
+      "sha256": "e1e9388f8e727e975fa048f3f90ffbd462ca33f0f2d4a5faa1e0b3cd6b033120"
+    },
+    {
+      "file": "favicon-48.png",
+      "sha256": "382bf77613af9aec22bff34a0b4a4e1fcc7956972d2e0aec6dfd7f2cbf979326"
+    },
+    {
+      "file": "favicon-64.png",
+      "sha256": "4184185dc38f4217d7e417aa739c87fbcadfac6f3a9aaba2fd1e9fc74ccc2598"
+    },
+    {
+      "file": "favicon-candidate.ico",
+      "sha256": "9c1e2e7a6a35d7c2202fd6858ca7596b50c5535e4d92b24acd833216e673b8b3"
+    },
+    {
+      "file": "review.png",
+      "sha256": "e29876206d53624a2087303850907731cf9a7a15227d4d0b9140b6e96f50778c"
+    },
+    {
+      "file": "steamharbor-micro-16.svg",
+      "sha256": "e760eae1a1095421ee8322bf5c84c206afc8c112d20b61935d4a671089402057"
+    },
+    {
+      "file": "steamharbor-micro.svg",
+      "sha256": "ba2055e2882930fcb24ce7fdc237f339fca1fbc3886a4e6ddaee67ffe23e853f"
+    }
+  ]
+}

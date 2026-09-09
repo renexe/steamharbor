@@ -40,3 +40,7 @@ As reduções usam Lanczos. A assinatura horizontal usa emblema limitado a 280×
 - Nenhuma implementação, merge, publicação, matriz vetorial, versão monocromática final ou favicon oficial é declarada nesta entrega.
 
 A matriz vetorial fiel e o microícone exigem produção própria. Não inserir estes PNGs em um SVG e chamá-lo de vetor. Para uma futura simplificação, preservar a relação porto + vapor + jogos e registrar a nova prova separadamente. A instrução do proprietário para continuar sem pedir permissões operacionais autoriza a execução técnica; não muda retroativamente os arquivos que compõem a referência visual definitiva.
+
+## Aprovação posterior
+
+O pacote foi aprovado pelo proprietário: “aprovado, continue”. [ADR-0007](../../../decisions/ADR-0007-approved-v02-extractions.md) e [approved-assets.json](approved-assets.json) governam o estado atual dos cinco PNGs de assinatura. Os nomes com sufixo candidate permanecem intactos como histórico. Os testes de redução não são favicons oficiais.
