@@ -1,6 +1,6 @@
 # SteamHarbor component foundation
 
-Status: **Canonical implementation baseline.** The approved brand identity is governed by [ADR-0006](decisions/ADR-0006-definitive-harbor-brand.md), [ADR-0007](decisions/ADR-0007-approved-v02-extractions.md), and the [brand guide](brand/brand-guide.md). The brand-integrated shell and homepage implementation is proposed for owner visual review under [ADR-0009](decisions/ADR-0009-brand-integrated-shell-baseline.md).
+Status: **Canonical implementation baseline.** The approved brand identity is governed by [ADR-0006](decisions/ADR-0006-definitive-harbor-brand.md), [ADR-0007](decisions/ADR-0007-approved-v02-extractions.md), and the [brand guide](brand/brand-guide.md). The brand-integrated shell and homepage from [ADR-0009](decisions/ADR-0009-brand-integrated-shell-baseline.md) were owner-accepted through the merge of PR #7. The dedicated Game Overview hierarchy is proposed for review under [ADR-0010](decisions/ADR-0010-game-overview-vertical-slice.md).
 
 Product and data foundations continue to govern scope, semantics, evidence, and unavailable states. Brand artwork and interface tokens are related but not interchangeable: UI implementation must not modify the approved logo to fit a component.
 
@@ -82,9 +82,20 @@ There is no oversized marketing hero and no decorative chart. Fixtures are alway
 - Desktop/laptop: native table with column headers, row headers, game links, and right-aligned tabular metrics. Local horizontal overflow is allowed only if needed.
 - Mobile below the comparison stress point: an ordered list replaces the wide table. Each game exposes the same decision-relevant `Players now` and `24h peak` labels in a definition list; values are not hidden behind unlabeled columns.
 
-## Existing game route
+## Game Overview vertical slice
 
-This phase applies the shell, tokens, typography, responsive spacing, and shared surface treatment to the existing game page without redesigning its product hierarchy. The dedicated **Game Overview vertical slice** remains the next planned major product phase.
+The fixture-backed game route applies the same **answer first, evidence next, raw data last** principle at app-detail depth:
+
+- A compact identity header groups release state, title, description, developer/publisher context, tags, catalog facts, and the outbound Steam link without a decorative banner.
+- Overview leads with Players now, 24h peak, all-time peak, positive-review percentage/sample size, and explicit price availability. Missing values never become zero; fixture peak references are labeled as such.
+- Activity shows the current snapshot and its evidence, while insufficient history is an explicit state instead of a fake line chart or hidden zero series.
+- Reviews keep sentiment label, positive percentage, positive/negative counts, total sample size, and observation time in the same reading unit.
+- Prices and Updates are first-class sections even when unavailable, because an explained missing source is more useful than silent omission.
+- Stable store/catalog facts move to Details; raw availability/evidence moves to Advanced behind explicit native disclosure.
+- Desktop keeps a sticky in-page section navigator. At 700px and below, it becomes a native `details`/`summary` “Jump to section” menu and the wide metric/fact groups recompose rather than horizontally shrinking.
+- Game-specific layout lives in the route CSS module; the shared shell remains in the global token stylesheet. The route remains server-rendered and adds no client dependency.
+
+The current fixture catalog contains only complete activity/review examples plus price-unavailable variants. Broader upcoming, partial, stale, empty, and provider-error fixtures remain the next state-coverage phase rather than being simulated in the UI.
 
 ## Accessibility and responsive baseline
 
@@ -100,6 +111,8 @@ Target WCAG 2.2 AA where practical; this is a target, not certification.
 - 200% zoom must preserve navigation/search access and content order;
 - mobile navigation must be keyboard/touch operable without hover.
 
+For game pages, section navigation must remain discoverable without horizontal tab dependence on mobile; every availability state needs textual meaning; evidence timestamps remain visible in text; and external Steam navigation receives a clear accessible name.
+
 Automated checks do not establish screen-reader compatibility, device usability, contrast across every rendered pixel, or visual acceptance. Browser/device review remains required before production acceptance.
 
 ## Performance and implementation rules
@@ -110,7 +123,12 @@ Automated checks do not establish screen-reader compatibility, device usability,
 - Use `next/font` for the supporting UI fonts instead of runtime stylesheet requests.
 - Do not load the large approved presentation board as the application header logo.
 - Keep unavailable modules static and honest instead of introducing chart or data dependencies before sources exist.
+- Route-specific CSS modules are appropriate when a page hierarchy becomes substantial enough that adding every selector to `globals.css` would blur the boundary between shell primitives and domain composition.
 
 ## Validation boundary
 
-Relevant code changes should run `npm run lint`, `npm run typecheck`, `npm test`, and `npm run build` in an environment with dependencies available. Visual review should cover at least 320px, approximately 390px, tablet, laptop, 1440px desktop, 200% zoom, keyboard-only navigation, reduced motion, and both system color schemes. Report automated validation separately from visual/accessibility acceptance.
+Relevant code changes should run `npm run lint`, `npm run typecheck`, `npm test`, and `npm run build` in an environment with dependencies available. The repository-wide lint command currently has a known pre-existing blocker in `tools/brand/render_favicon.cjs`; do not describe lint as globally clean until that separate issue is fixed.
+
+Visual review should cover at least 320px, approximately 390px, tablet, laptop, 1440px desktop, 200% zoom, keyboard-only navigation, reduced motion, and both system color schemes. For the Game Overview slice, browser QA should additionally verify no page-wide overflow, desktop/mobile section-navigation switching, explicit unavailable data states, and at least one fixture with a different price availability reason.
+
+Report automated validation separately from visual/accessibility acceptance.
