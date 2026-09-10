@@ -143,28 +143,23 @@ export default async function GamePage({ params }: { params: Promise<{ appId: st
         <dl className={styles.metrics}>
           <div>
             <dt>Players now</dt>
-            <dd>{game.activity ? number.format(game.activity.players) : 'Unavailable'}</dd>
-            <span>{game.activity ? 'Connected-player fixture' : 'No current activity observation'}</span>
+            <dd>{game.activity ? number.format(game.activity.players) : 'Unavailable'}<span>{game.activity ? 'Connected-player fixture' : 'No current activity observation'}</span></dd>
           </div>
           <div>
             <dt>24h peak</dt>
-            <dd>{game.activity?.peak24h !== undefined ? number.format(game.activity.peak24h) : 'Unavailable'}</dd>
-            <span>{game.activity?.peak24h !== undefined ? 'Fixture peak reference' : 'Insufficient history'}</span>
+            <dd>{game.activity?.peak24h !== undefined ? number.format(game.activity.peak24h) : 'Unavailable'}<span>{game.activity?.peak24h !== undefined ? 'Fixture peak reference' : 'Insufficient history'}</span></dd>
           </div>
           <div>
             <dt>All-time peak</dt>
-            <dd>{game.activity?.allTimePeak !== undefined ? number.format(game.activity.allTimePeak) : 'Unavailable'}</dd>
-            <span>{game.activity?.allTimePeak !== undefined ? 'Fixture peak reference' : 'No verified peak reference'}</span>
+            <dd>{game.activity?.allTimePeak !== undefined ? number.format(game.activity.allTimePeak) : 'Unavailable'}<span>{game.activity?.allTimePeak !== undefined ? 'Fixture peak reference' : 'No verified peak reference'}</span></dd>
           </div>
           <div>
             <dt>Positive reviews</dt>
-            <dd>{positivePercent !== undefined ? `${percent.format(positivePercent)}%` : 'Unavailable'}</dd>
-            <span>{game.reviews ? `${number.format(game.reviews.total)} reviews in fixture` : 'No review summary'}</span>
+            <dd>{positivePercent !== undefined ? `${percent.format(positivePercent)}%` : 'Unavailable'}<span>{game.reviews ? `${number.format(game.reviews.total)} reviews in fixture` : 'No review summary'}</span></dd>
           </div>
           <div>
             <dt>Price context</dt>
-            <dd className={styles.metricText}>{priceAvailability ? titleCase(priceAvailability.state) : 'Unavailable'}</dd>
-            <span>{priceAvailability?.reason ? titleCase(priceAvailability.reason) : 'No verified regional price'}</span>
+            <dd className={styles.metricText}>{priceAvailability ? titleCase(priceAvailability.state) : 'Unavailable'}<span>{priceAvailability?.reason ? titleCase(priceAvailability.reason) : 'No verified regional price'}</span></dd>
           </div>
         </dl>
 
@@ -306,7 +301,7 @@ export default async function GamePage({ params }: { params: Promise<{ appId: st
 
         <details className={styles.evidenceDisclosure}>
           <summary>Evidence and availability details</summary>
-          <div className={styles.availabilityGrid}>
+          <dl className={styles.availabilityGrid}>
             {availabilityKeys.map((key) => {
               const value = game.availability[key];
               return (
@@ -320,7 +315,7 @@ export default async function GamePage({ params }: { params: Promise<{ appId: st
                 </div>
               );
             })}
-          </div>
+          </dl>
           <div className={styles.rawEvidence}>
             <div>
               <span>Data mode</span>
