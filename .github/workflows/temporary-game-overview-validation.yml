@@ -45,9 +45,7 @@ jobs:
           trap 'kill "$APP_PID" 2>/dev/null || true' EXIT
 
           for attempt in $(seq 1 30); do
-            if curl -fsS http://127.0.0.1:3000/games/730 >/dev/null; then
-              break
-            fi
+            if curl -fsS http://127.0.0.1:3000/games/730 >/dev/null; then break; fi
             sleep 1
           done
           curl -fsS http://127.0.0.1:3000/games/730 >/dev/null
@@ -59,9 +57,7 @@ jobs:
           trap 'kill "$APP_PID" "$CHROME_PID" 2>/dev/null || true' EXIT
 
           for attempt in $(seq 1 20); do
-            if curl -fsS http://127.0.0.1:9222/json >/dev/null; then
-              break
-            fi
+            if curl -fsS http://127.0.0.1:9222/json >/dev/null; then break; fi
             sleep 0.5
           done
 
@@ -130,18 +126,19 @@ jobs:
 
             const state = await evaluate(`(() => {
               const doc = document.documentElement;
-              const display = (selector) => {
-                const node = document.querySelector(selector);
-                return node ? getComputedStyle(node).display : null;
-              };
+              const display = (node) => node ? getComputedStyle(node).display : null;
+              const sectionNav = document.querySelector('nav[aria-label="Game sections"]');
+              const sectionMenu = Array.from(document.querySelectorAll('details')).find((node) =>
+                node.querySelector(':scope > summary')?.textContent?.includes('Jump to section')
+              );
               const text = document.body.innerText;
               return {
                 title: document.title,
                 clientWidth: doc.clientWidth,
                 scrollWidth: doc.scrollWidth,
                 pageOverflow: doc.scrollWidth > doc.clientWidth + 1,
-                sectionNav: display('nav[aria-label="Game sections"]'),
-                sectionMenu: display('details'),
+                sectionNav: display(sectionNav),
+                sectionMenu: display(sectionMenu),
                 hasOverview: text.includes('The useful answer first.'),
                 hasActivityGap: text.includes('No activity timeline yet'),
                 hasPriceGap: text.includes('Regional price context stays gated.'),
