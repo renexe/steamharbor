@@ -1,0 +1,185 @@
+name: Temporary responsive browser QA
+
+on:
+  push:
+    branches:
+      - feat/brand-integrated-shell
+
+permissions:
+  contents: read
+
+jobs:
+  browser-qa:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install and build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Run production app and capture responsive QA
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm start > /tmp/steamharbor-next.log 2>&1 &
+          APP_PID=$!
+          trap 'kill "$APP_PID" 2>/dev/null || true' EXIT
+
+          for attempt in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:3000/ >/dev/null; then
+              break
+            fi
+            sleep 1
+          done
+          curl -fsS http://127.0.0.1:3000/ >/dev/null
+
+          BROWSER="$(command -v google-chrome || command -v chromium || command -v chromium-browser || true)"
+          test -n "$BROWSER"
+          "$BROWSER" --headless=new --no-sandbox --disable-gpu --remote-debugging-port=9222 about:blank > /tmp/steamharbor-chrome.log 2>&1 &
+          CHROME_PID=$!
+          trap 'kill "$APP_PID" "$CHROME_PID" 2>/dev/null || true' EXIT
+
+          for attempt in $(seq 1 20); do
+            if curl -fsS http://127.0.0.1:9222/json >/dev/null; then
+              break
+            fi
+            sleep 0.5
+          done
+
+          mkdir -p qa
+          node <<'NODE'
+          import fs from 'node:fs/promises';
+
+          const targets = await (await fetch('http://127.0.0.1:9222/json')).json();
+          const target = targets.find((entry) => entry.type === 'page');
+          if (!target?.webSocketDebuggerUrl) throw new Error('Chrome page target unavailable');
+
+          const ws = new WebSocket(target.webSocketDebuggerUrl);
+          await new Promise((resolve, reject) => {
+            ws.addEventListener('open', resolve, { once: true });
+            ws.addEventListener('error', reject, { once: true });
+          });
+
+          let id = 0;
+          const pending = new Map();
+          ws.addEventListener('message', (event) => {
+            const message = JSON.parse(event.data);
+            if (!message.id || !pending.has(message.id)) return;
+            const { resolve, reject } = pending.get(message.id);
+            pending.delete(message.id);
+            if (message.error) reject(new Error(JSON.stringify(message.error)));
+            else resolve(message.result ?? {});
+          });
+
+          function send(method, params = {}) {
+            const requestId = ++id;
+            ws.send(JSON.stringify({ id: requestId, method, params }));
+            return new Promise((resolve, reject) => pending.set(requestId, { resolve, reject }));
+          }
+
+          async function evaluate(expression) {
+            const result = await send('Runtime.evaluate', { expression, returnByValue: true, awaitPromise: true });
+            return result.result?.value;
+          }
+
+          await send('Page.enable');
+          await send('Runtime.enable');
+
+          const cases = [
+            { route: '/', width: 320, scheme: 'light' },
+            { route: '/', width: 390, scheme: 'light' },
+            { route: '/', width: 768, scheme: 'light' },
+            { route: '/', width: 1024, scheme: 'light' },
+            { route: '/', width: 1440, scheme: 'light' },
+            { route: '/', width: 1440, scheme: 'dark' },
+            { route: '/games/730', width: 320, scheme: 'light' },
+            { route: '/games/730', width: 390, scheme: 'light' },
+            { route: '/games/730', width: 1440, scheme: 'light' },
+          ];
+
+          const report = [];
+          for (const testCase of cases) {
+            await send('Emulation.setDeviceMetricsOverride', {
+              width: testCase.width,
+              height: 900,
+              deviceScaleFactor: 1,
+              mobile: testCase.width <= 700,
+            });
+            await send('Emulation.setEmulatedMedia', {
+              features: [{ name: 'prefers-color-scheme', value: testCase.scheme }],
+            });
+            await send('Page.navigate', { url: `http://127.0.0.1:3000${testCase.route}` });
+            await new Promise((resolve) => setTimeout(resolve, 700));
+
+            const state = await evaluate(`(() => {
+              const doc = document.documentElement;
+              const display = (selector) => {
+                const node = document.querySelector(selector);
+                return node ? getComputedStyle(node).display : null;
+              };
+              const logo = document.querySelector('.brand__logo:not([style*="display: none"])') || document.querySelector('.brand__logo');
+              return {
+                title: document.title,
+                innerWidth: window.innerWidth,
+                clientWidth: doc.clientWidth,
+                scrollWidth: doc.scrollWidth,
+                pageOverflow: doc.scrollWidth > doc.clientWidth + 1,
+                siteNav: display('.site-nav'),
+                mobileNav: display('.mobile-nav'),
+                rankingTable: display('.ranking-table-wrap'),
+                rankingMobile: display('.ranking-mobile'),
+                logoLoaded: Boolean(logo && logo.complete && logo.naturalWidth > 0),
+                mainWidth: Math.round(document.querySelector('main')?.getBoundingClientRect().width || 0),
+              };
+            })()`);
+
+            if (state.pageOverflow) throw new Error(`Page-wide overflow at ${testCase.route} ${testCase.width}px`);
+            if (!state.logoLoaded) throw new Error(`Brand logo failed to load at ${testCase.route} ${testCase.width}px`);
+            if (testCase.route === '/') {
+              if (testCase.width <= 700 && (state.rankingTable !== 'none' || state.rankingMobile === 'none')) {
+                throw new Error(`Mobile ranking transform failed at ${testCase.width}px`);
+              }
+              if (testCase.width > 700 && (state.rankingTable === 'none' || state.rankingMobile !== 'none')) {
+                throw new Error(`Desktop ranking presentation failed at ${testCase.width}px`);
+              }
+            }
+            if (testCase.width <= 880 && (state.siteNav !== 'none' || state.mobileNav === 'none')) {
+              throw new Error(`Mobile navigation transform failed at ${testCase.width}px`);
+            }
+            if (testCase.width > 880 && (state.siteNav === 'none' || state.mobileNav !== 'none')) {
+              throw new Error(`Desktop navigation presentation failed at ${testCase.width}px`);
+            }
+
+            const metrics = await send('Page.getLayoutMetrics');
+            const content = metrics.cssContentSize ?? metrics.contentSize;
+            const screenshot = await send('Page.captureScreenshot', {
+              format: 'png',
+              captureBeyondViewport: true,
+              clip: { x: 0, y: 0, width: Math.min(content.width, testCase.width), height: content.height, scale: 1 },
+            });
+            const safeRoute = testCase.route === '/' ? 'home' : 'game-730';
+            const name = `${safeRoute}-${testCase.width}-${testCase.scheme}`;
+            await fs.writeFile(`qa/${name}.png`, Buffer.from(screenshot.data, 'base64'));
+            report.push({ ...testCase, ...state, screenshot: `${name}.png`, contentHeight: Math.round(content.height) });
+          }
+
+          await fs.writeFile('qa/report.json', JSON.stringify(report, null, 2));
+          console.log(JSON.stringify(report, null, 2));
+          ws.close();
+          NODE
+
+      - name: Upload responsive QA
+        uses: actions/upload-artifact@v4
+        with:
+          name: responsive-qa
+          path: qa/
+          if-no-files-found: error
