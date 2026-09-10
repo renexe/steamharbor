@@ -1,0 +1,27 @@
+{
+  "status": "approved",
+  "evidence": "aprovado, continue",
+  "decision": "docs/decisions/ADR-0007-approved-v02-extractions.md",
+  "assets": [
+    {
+      "file": "steamharbor-symbol.png",
+      "sha256": "98981f814df4c7cf5f35ba7df2c8349f8d16403bfb52ebae77a29b46fc2c4e91"
+    },
+    {
+      "file": "steamharbor-wordmark.png",
+      "sha256": "d997892e16c7adb12da3ff2dbd6ae6157b819bbe1c00a2a5690aa6822d986b7d"
+    },
+    {
+      "file": "steamharbor-vertical.png",
+      "sha256": "fbb3770abf1349bf84f74740d1577b7d48681f2cf415036c1acdd869699c7f3c"
+    },
+    {
+      "file": "steamharbor-horizontal-candidate.png",
+      "sha256": "7b280f017747c8348acea2ad4963746cf272d8cea6e0667b0d00fd5452faa010"
+    },
+    {
+      "file": "steamharbor-vertical-reverse-candidate.png",
+      "sha256": "ecb9a7381312ceebbb347a9ec4d77b06a2855b9402c421750536924ae411ee1f"
+    }
+  ]
+}

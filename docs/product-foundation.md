@@ -1,5 +1,7 @@
 # SteamHarbor — Product Foundation
 
+> Brand update: section 9 is superseded for exact identity and the earlier literal-nautical restriction by [ADR-0006](decisions/ADR-0006-definitive-harbor-brand.md). The approved target is an illustrated harbor; [brand guide](brand/brand-guide.md) governs its application. Product/data/UX principles remain in force.
+
 _Status: initial direction · 9 September 2026_
 
 ## 1. Product promise

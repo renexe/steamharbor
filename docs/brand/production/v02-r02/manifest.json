@@ -1,0 +1,14 @@
+{
+  "status": "technical repair and consistent horizontal reverse derivative",
+  "method": "preserve source alpha and emblem pixels; set lettering RGB to approved ivory",
+  "files": [
+    {
+      "file": "steamharbor-vertical-reverse.png",
+      "sha256": "a66b88065f8625005c29c6e6f4e6bc4698d48c9104f25e7fa351435056eb1e15"
+    },
+    {
+      "file": "steamharbor-horizontal-reverse.png",
+      "sha256": "79c48d6bed7be80d141fd1ab5be505276c56720c06020f695fda29f13284cd6b"
+    }
+  ]
+}

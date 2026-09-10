@@ -1,0 +1,23 @@
+{
+  "status": "proposed-not-approved",
+  "renderer": "tools/brand/render_theme.py",
+  "data_source": "src/fixtures/games.ts",
+  "assets": [
+    {
+      "file": "desktop-dark.png",
+      "sha256": "5fa4ef2964688fb5d049a86ad921449d6184bbec05d83df23b9a1bca196f3060"
+    },
+    {
+      "file": "desktop-light.png",
+      "sha256": "a945bf87ade96aa74beb750e1acfe3bc323772ea323d9951da202fa774d6845d"
+    },
+    {
+      "file": "mobile-dark.png",
+      "sha256": "1a20b20884fe6dccca0df9cc1cfa0d38ded802e80f274bdcccda9fe2096c24d1"
+    },
+    {
+      "file": "mobile-light.png",
+      "sha256": "aa841fa9dc5a7ab2ec876b379b8013bbc0f4fb6188c9a0b1445e315024b2237e"
+    }
+  ]
+}

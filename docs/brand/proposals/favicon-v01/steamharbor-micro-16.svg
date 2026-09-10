@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+ <title>SteamHarbor — proposta óptica de 16 pixels</title>
+ <ellipse cx="8" cy="11" rx="7" ry="4" fill="#087F8C"/>
+ <path d="M1 11C1 6 15 6 15 11H13C13 8 3 8 3 11Z" fill="#F3DEB9"/>
+ <path d="M1 11C1 13 3 14 5 15V13C3 12 3 11 3 10ZM15 11C15 13 13 14 11 15V13C13 12 13 11 13 10Z" fill="#E7C797"/>
+ <path d="M11 4H15V8H11Z" fill="#123D47"/>
+ <path d="M11 8H15V10H11Z" fill="#B64F2B"/>
+ <path d="M12 5H13V6H14V7H13V8H12V7H11V6H12Z" fill="#F7F3EA"/>
+ <path d="M3 11H12L11 13H5Z" fill="#123D47"/>
+ <path d="M3 10H11L12 11L10 12H5Z" fill="#CE6635"/>
+ <path d="M5 8H9V11H5Z" fill="#F7F3EA"/>
+ <path d="M6 9H7V10H6Z" fill="#B64F2B"/>
+ <path d="M6 5H8V8H6Z" fill="#B64F2B"/>
+ <path d="M6 5H8V6H6Z" fill="#123D47"/>
+ <circle cx="6.5" cy="4" r="1.25" fill="#F3DEB9"/>
+ <circle cx="5.5" cy="2.5" r="1.5" fill="#F3DEB9"/>
+</svg>

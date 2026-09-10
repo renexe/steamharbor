@@ -1,0 +1,26 @@
+[
+  {
+    "direction": "A",
+    "path": "docs/brand/proposals/v002/assets/steamharbor-a-concept-v002.png",
+    "version": "v002",
+    "status": "proposed-not-approved",
+    "format": "raster-concept-board-not-final-vector",
+    "sha256": "60824cc4a9a5829b46b5218f5f97ea3895f8e48981e6308b7d2547b5b66e53fa"
+  },
+  {
+    "direction": "B",
+    "path": "docs/brand/proposals/v002/assets/steamharbor-b-concept-v002.png",
+    "version": "v002",
+    "status": "proposed-not-approved",
+    "format": "raster-concept-board-not-final-vector",
+    "sha256": "97183ea6459c60e3a7d77d05d8279ba4a4096239cd8c84c3323ba0fab0e5cc37"
+  },
+  {
+    "direction": "C",
+    "path": "docs/brand/proposals/v002/assets/steamharbor-c-concept-v002.png",
+    "version": "v002",
+    "status": "proposed-not-approved",
+    "format": "raster-concept-board-not-final-vector",
+    "sha256": "1fa6667a2bd2a8f746af63f6d42140095692f55a4087d89c7c5ab9d75a89df0a"
+  }
+]

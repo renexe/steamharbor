@@ -1,0 +1,178 @@
+{
+  "source": "docs/brand/approved/v02/steamharbor-v02-approved-board.png",
+  "source_sha256": "a07c9adffc8da2b9f2e6b57181c48ee9ee8b24bdd40ae55e56013bcaf3331711",
+  "method": "deterministic paper-field fit, constrained mask, edge-alpha decontamination; no image generation",
+  "status": "technical derivatives, not a new visual approval",
+  "source_boxes": {
+    "symbol": [
+      114,
+      139,
+      913,
+      675
+    ],
+    "vertical": [
+      73,
+      139,
+      955,
+      824
+    ],
+    "wordmark_region": [
+      64,
+      685,
+      963,
+      832
+    ]
+  },
+  "assets": [
+    {
+      "file": "edge-review.png",
+      "size": [
+        1500,
+        550
+      ],
+      "mode": "RGB",
+      "sha256": "192e9304c92fe72c0892bd426531208be097d6f1686924ab793f2fc2295df647",
+      "status": "review-only"
+    },
+    {
+      "file": "extraction-review.png",
+      "size": [
+        1400,
+        900
+      ],
+      "mode": "RGB",
+      "sha256": "c4bee0fc5f45a5bed5084a8fa8a1b4fcd7ef546850b708369b0836049049aec2",
+      "status": "review-only"
+    },
+    {
+      "file": "steamharbor-horizontal-candidate.png",
+      "size": [
+        788,
+        215
+      ],
+      "mode": "RGBA",
+      "sha256": "7b280f017747c8348acea2ad4963746cf272d8cea6e0667b0d00fd5452faa010",
+      "status": "review-only"
+    },
+    {
+      "file": "steamharbor-symbol.png",
+      "size": [
+        823,
+        560
+      ],
+      "mode": "RGBA",
+      "sha256": "98981f814df4c7cf5f35ba7df2c8349f8d16403bfb52ebae77a29b46fc2c4e91",
+      "status": "extracted-derivative"
+    },
+    {
+      "file": "steamharbor-vertical-reverse-candidate.png",
+      "size": [
+        906,
+        709
+      ],
+      "mode": "RGBA",
+      "sha256": "ecb9a7381312ceebbb347a9ec4d77b06a2855b9402c421750536924ae411ee1f",
+      "status": "review-only"
+    },
+    {
+      "file": "steamharbor-vertical.png",
+      "size": [
+        906,
+        709
+      ],
+      "mode": "RGBA",
+      "sha256": "fbb3770abf1349bf84f74740d1577b7d48681f2cf415036c1acdd869699c7f3c",
+      "status": "extracted-derivative"
+    },
+    {
+      "file": "steamharbor-wordmark.png",
+      "size": [
+        906,
+        158
+      ],
+      "mode": "RGBA",
+      "sha256": "d997892e16c7adb12da3ff2dbd6ae6157b819bbe1c00a2a5690aa6822d986b7d",
+      "status": "extracted-derivative"
+    },
+    {
+      "file": "symbol-test-128.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "e7bf1531813769c7efce7b439a90543b3be176ba4633491e9275d0d62a2415a4",
+      "status": "review-only"
+    },
+    {
+      "file": "symbol-test-16.png",
+      "size": [
+        16,
+        16
+      ],
+      "mode": "RGBA",
+      "sha256": "38ce1a5674d157e22e3237c8c790db7baf1db35205e897fa2f3fee214f4ec52c",
+      "status": "review-only"
+    },
+    {
+      "file": "symbol-test-24.png",
+      "size": [
+        24,
+        24
+      ],
+      "mode": "RGBA",
+      "sha256": "5527496593e6ca9a016d5fac73036780ca5391802c5a487b603dd7d232727b9b",
+      "status": "review-only"
+    },
+    {
+      "file": "symbol-test-256.png",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "sha256": "0e3e67334c99ab39923fbfd67186b10a4e1832daf96e802da3d7a01af33e95c5",
+      "status": "review-only"
+    },
+    {
+      "file": "symbol-test-32.png",
+      "size": [
+        32,
+        32
+      ],
+      "mode": "RGBA",
+      "sha256": "4a4139c7647a08b7500c828f8bee01c49b2e9af3b75e39dbbcb2ed23b3193988",
+      "status": "review-only"
+    },
+    {
+      "file": "symbol-test-48.png",
+      "size": [
+        48,
+        48
+      ],
+      "mode": "RGBA",
+      "sha256": "5d7d8f8fbe02a91d8d918fcf640686cf102b4c0588651fb4811650d0c7d29337",
+      "status": "review-only"
+    },
+    {
+      "file": "symbol-test-512.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "sha256": "9e83b52bdcc069f58a74bfa529a48b89e81137c0c7bada62c4a97d97dc1e85fc",
+      "status": "review-only"
+    },
+    {
+      "file": "symbol-test-64.png",
+      "size": [
+        64,
+        64
+      ],
+      "mode": "RGBA",
+      "sha256": "900a90cd1a16e3c6ee70533e55134761702998d24a152400b6965fbd8d9722d9",
+      "status": "review-only"
+    }
+  ]
+}
