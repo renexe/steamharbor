@@ -23,7 +23,7 @@ An implementation discrepancy does not silently replace documented canon. Resolv
 | Canon governance | [ADR-0002](decisions/ADR-0002-canonical-documentation.md) | Accepted | 2026-09-09 |
 | Review and delivery policy | [ADR-0003](decisions/ADR-0003-visual-review-and-delivery.md) | Accepted | 2026-09-09 |
 | Vercel build and output configuration | [ADR-0004](decisions/ADR-0004-vercel-build-configuration.md) | Accepted | 2026-09-09 |
-| Design tokens and component specifications | [design-system.md](design-system.md) | Canonical implementation baseline; visual review pending | 2026-09-09 |
+| Design tokens and component specifications | [design-system.md](design-system.md) | Canonical implementation baseline; game overview under review | 2026-09-09 |
 | Brand approval scope and gates | [ADR-0005](decisions/ADR-0005-brand-approval-gates.md) | Accepted governance; advanced by ADR-0006 | 2026-09-09 |
 | Brand index and approval records | [brand/README.md](brand/README.md) | Canonical entry point; definitive v02 approved | 2026-09-09 |
 | Definitive illustrated harbor identity | [ADR-0006](decisions/ADR-0006-definitive-harbor-brand.md) | Accepted owner approval | 2026-09-09 |
@@ -32,7 +32,8 @@ An implementation discrepancy does not silently replace documented canon. Resolv
 | Brand extraction provenance and production status | [V02-R01](brand/production/v02-r01/README.md) | Canonical production record | 2026-09-09 |
 | Consolidated brand delivery | [ADR-0008](decisions/ADR-0008-consolidated-brand-delivery.md) | Accepted owner instruction | 2026-09-09 |
 | Brand usage and production guide | [brand/brand-guide.md](brand/brand-guide.md) | Canonical; initial technical specs labeled | 2026-09-09 |
-| Brand-integrated application shell baseline | [ADR-0009](decisions/ADR-0009-brand-integrated-shell-baseline.md) | Proposed implementation baseline for visual review | 2026-09-09 |
+| Brand-integrated application shell baseline | [ADR-0009](decisions/ADR-0009-brand-integrated-shell-baseline.md) | Accepted through owner merge of PR #7 | 2026-09-09 |
+| Game Overview vertical slice | [ADR-0010](decisions/ADR-0010-game-overview-vertical-slice.md) | Proposed implementation baseline for visual review | 2026-09-09 |
 
 The definitive V02 harbor identity remains the active brand authority. The old application `SH` monogram is not an approved SteamHarbor identity. Interface tokens, responsive behavior, and component treatment are implementation decisions governed separately from the immutable approved brand binaries.
 
@@ -47,7 +48,8 @@ The definitive V02 harbor identity remains the active brand authority. The old a
 ## Current delivery state
 
 - M0 product and data foundations: complete.
-- M1 application foundation: fixture-backed shell and homepage implemented; definitive brand integration is proposed through ADR-0009 and remains subject to owner visual review.
-- Current slice: canonical V02 brand signature in the shell, responsive primary navigation, keyboard global search, explicitly labeled fixture coverage, desktop/mobile activity ranking, honest unavailable integration states, and the existing game overview route carried onto the shared token baseline.
-- Provider integration, authentication, live Steam statistics, pricing, price history, watchlists, and global rankings: not implemented.
-- Next planned major phase after approval of this baseline: **Game Overview vertical slice** using the finalized shell and design system.
+- M1 application foundation: fixture-backed shell and homepage implemented and owner-accepted through the merge of PR #7; ADR-0009 is the current shared shell baseline.
+- M2 Game Overview vertical slice: implemented on its review branch under ADR-0010; owner visual review/merge remains the acceptance gate.
+- Current slice: compact game identity, answer-first overview metrics, explicit fixture freshness, activity snapshot without fabricated history, review sentiment with sample size, gated price/update states, stable details, progressive evidence disclosure, and intentional mobile section navigation.
+- Provider integration, authentication, live Steam statistics, pricing, price history, watchlists, global rankings, and real store artwork: not implemented.
+- Next planned phase after approval of ADR-0010: expand deterministic non-happy fixture coverage and prove module-level partial/stale/empty/error behavior before provider integration.
